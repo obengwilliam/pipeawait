@@ -1,28 +1,34 @@
-#### AsyncPipe
-Performs left-to-right composition of one or more Promise-returning functions.All functions should be unary
+#### PipeAwait 
+Compose asynchronous functions. If you are a big fun of `Ramda.pipe` and `Lodash.flow` you will love this small utilty.
+This simply allows to compose promises
 
 #### Installation
-npm install @kudobuzz/asyncpipe
+npm install pipeawait
 
 #### Usage
 
 ```
-const asyncPipe = require('@kudobuzz/asyncpipe')
+const asyncPipe = require('pipeawait')
 
 
-const resolveTo = num => Promise.resolve(num || 2)
+const substract1 = num => Promise.resolve(num - 2)
 
 
 const add1 = num => Promise.resolve(num + 1)
 
+const add1multiply2 = async (num)=>{
+ const numplus2 = await add1(num)
+ return numplus2 *3
+ }
 
 const asyncResolveTo = async num => {
   const result = await resolveTo(num)
   return result
 }
 
-const add1To2 = asyncPipe(resolveTo, add1)(2) // initalvalue 2 is optional
+const add1To2andMultiply = asyncPipe(add1, subsctract1, add1multiply2)
 
-->resolveTo(2) -> add
+>>> add1ToMultiply(2).then(console.log.bind(console.log))
+>>> 6
 
 ```
