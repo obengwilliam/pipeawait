@@ -1,6 +1,6 @@
 {
-  "name": "@kudobuzz/asyncpipe",
-  "version": "1.0.1",
+  "name": "pipeawait",
+  "version": "1.0.0",
   "description": "Compose promised returning functions including async functions",
   "main": "index.js",
   "scripts": {

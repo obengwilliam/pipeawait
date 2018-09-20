@@ -1,6 +1,7 @@
 'use strict'
+
 const asyncPipe = require('./index')
-const {expect} = require('chai')
+const { expect } = require('chai')
 
 const resolveTo = num => Promise.resolve(num || 2)
 const add1 = num => Promise.resolve(num + 1)
@@ -19,8 +20,7 @@ describe('Async await pipe', () => {
   it('should compose promise functions together', () => {
     const add1To2 = asyncPipe(resolveTo, add1)
 
-    return add1To2()
-    .then(result => expect(result).to.equal(3))
+    return add1To2().then(result => expect(result).to.equal(3))
   })
 
   it('should return "Promise"', () => {
@@ -32,8 +32,7 @@ describe('Async await pipe', () => {
   it('should pass first param to first function', () => {
     const add1To3 = asyncPipe(resolveTo, add1)
 
-    return add1To3(3)
-    .then(result => expect(result).to.equal(4))
+    return add1To3(3).then(result => expect(result).to.equal(4))
   })
 
   it('should compose async functions', async () => {
