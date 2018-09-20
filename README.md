@@ -1,6 +1,5 @@
 #### PipeAwait 
-Compose asynchronous functions. If you are a big fun of `Ramda.pipe` and `Lodash.flow` you will love this small utilty.
-This simply allows to compose promises
+Compose asynchronous functions(Promises and async/await). If you are a big fun of `Ramda.pipe` and `Lodash.flow` you will love this small utilty.
 
 #### Installation
 npm install pipeawait
