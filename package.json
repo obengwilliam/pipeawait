@@ -1,14 +1,21 @@
 {
   "name": "pipeawait",
   "version": "1.0.0",
-  "description": "Compose promised returning functions including async functions",
+  "description": "Compose asynchronous functions",
   "main": "index.js",
+  "keywords":[
+    "pipe",
+    "asynchronous",
+    "flow"
+  ],
+  "homepage":"https://github.com/obengwilliam/pipeawait#readme",
   "scripts": {
     "test": "mocha *.test.js",
     "lint": "# Run lint and fix \n\t standard --verbose | snazzy"
   },
-  "author": "",
-  "license": "ISC",
+  "engines":">=7.6",
+  "author": "obeng william (https://williamobeng.com)",
+  "license": "MIT",
   "devDependencies": {
     "chai": "4.1.2",
     "mocha": "4.1.0",
@@ -18,9 +25,13 @@
   "standard": {
     "env": [
       "mocha"
-    ],
-    "ignore": [
-      "docs/"
     ]
+  },
+   "bugs": {
+    "url": "https://github.com/obengwilliam/pipeawait/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/obengwilliam/pipeawait"
   }
 }
