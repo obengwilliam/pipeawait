@@ -1,33 +1,28 @@
 #### PipeAwait 
 Compose asynchronous functions(Promises and async/await). If you are a big fun of `Ramda.pipe` and `Lodash.flow` you will love this small utilty.
 
+>See 
+> [the blog Post](https://medium.com/p/360f16a8616/edit)
+
 #### Installation
 npm install pipeawait
 
-#### Usage
+### The Problem
+You need a simple utility to compose your functions including asynchronous functions just like you will do using lodash/flow
+
+
+#### The Solution
 
 ```
-const asyncPipe = require('pipeawait')
+npm install pipeawait  // install from npm 
 
+const pipe = require("pipeawait")
 
-const substract1 = num => Promise.resolve(num - 2)
-
-
-const add1 = num => Promise.resolve(num + 1)
-
-const add1multiply2 = async (num)=>{
- const numplus2 = await add1(num)
- return numplus2 *3
- }
-
-const asyncResolveTo = async num => {
-  const result = await resolveTo(num)
-  return result
-}
-
-const add1To2andMultiply = asyncPipe(add1, subsctract1, add1multiply2)
-
->>> add1ToMultiply(2).then(console.log.bind(console.log))
->>> 6
+const sync404Issues = pipe(
+   find404Issues, // async function
+   transform404Issues, 
+   addNew404WebmasterIssues, // async function
+   publishNew404Issues
+)
 
 ```
